@@ -1,67 +1,74 @@
-import React, { useState } from 'react';
-import "./style.css"
-import Header from './components/Header'
-import PostList from './components/PostList'
+import React, { useState } from "react";
+import './App.css';
+import Foto from './component/imagem/script.js';
+import Perfil from './component/Perfil/perfil.js';
+import Header from './component/Header/header';
+import Sidebar from './component/sidebar/sidebar';
+import Experiencia from "./component/experiencias/experiencias";
+
 function App() {
 
-  const minhaAPIFalsa = {
-    posts: [
-      {
-        id: 1,
-        author: {
-          name: 'Rodrigo França',
-          avatar: 'https://randomuser.me/api/portraits/men/58.jpg'
+  const fakeAPI =  
+    {
+      nome: 'Priscilla Santana do Espirito Santo',
+      ocupacao: 'Front End Developer Student | React.js | Javascript',
+      resumo: '8 anos e já sei React',
+      perfilProfissional: 'Faço miojo bom',
+      contatos: [
+        {
+          id: 1,
+          tipo: 'Telefone',
+          contato: '(21) 99022-2459'
         },
-        date: '05 Mar 2020',
-        content: 'Data para novo curso?',
-        comments: [
-          {
-            id: 1,
-            author: {
-              name: 'Douglas Silva',
-              avatar: 'https://randomuser.me/api/portraits/men/22.jpg'
-            },
-            content: 'Ainda não foi definido.'
-          },
-          {
-            id: 2,
-            author: {
-              name: 'Fernando Costa',
-              avatar: 'https://randomuser.me/api/portraits/men/37.jpg'
-            },
-            content: 'Provavelmente em Agosto.'
-          }
-        ]
-      },
-      {
-        id: 2,
-        author: {
-          name: 'Bianca Rodrigues',
-          avatar: 'https://randomuser.me/api/portraits/women/58.jpg'
+        {
+          id: 2,
+          tipo: 'email',
+          contato: 'priscillasantana@outlook.com'
+        }
+      ],
+      educacao: [
+        {
+          id: 1,
+          instituicao: 'UFPel',
+          curso: 'Relações Internacionais - Concluída'
         },
-        date: '04 Mar 2020',
-        content: 'Pessoal, alguém já usou React Native?',
-        comments: [
-          {
-            id: 1,
-            author: {
-              name: 'Rafael Maia',
-              avatar: 'https://randomuser.me/api/portraits/men/15.jpg'
-            },
-            content: 'Sim! Recomendo bastante!'
-          }
-        ]
-      }
-    ]
-  }
-
-  const [resposta] = useState(minhaAPIFalsa)
+        {
+          id: 2,
+          instituicao: 'Campinas Tech Talents',
+          curso: 'React.js Developer - Em andamento'
+        }
+      ],
+      experiencia: [
+        {
+          id: 1,
+          cargo: 'Introdução ao Desenvolvimento Web',
+          periodo: '2020',
+          empresa: 'Programaria',
+          local: '',
+          conteudo: 'Conceitos básicos de HTML, CSS e JavaScript'
+        },
+        {
+          id: 2,
+          cargo: '',
+          periodo: '2020',
+          empresa: 'Digital Innovation One',
+          local: '',
+          conteudo: '-Lógica de Programação essencial, Programação para internet com JavaScript, Programação para internet com HTML5 e CSS3, Construindo páginas para internet com Bootstrap'
+        }
+      ]
+  };
+  
 
   return (
-    <>
-      <Header />
-      <PostList resposta={resposta} />
-    </>
+    <main>
+        
+    <Foto />
+    <Header />
+    <Perfil />
+    <Sidebar />
+    <Experiencia />
+
+    </main>
   );
 }
 
