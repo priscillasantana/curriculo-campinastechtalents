@@ -22,14 +22,14 @@ function App() {
         },
         {
           id: 2,
-          tipo: 'email',
+          tipo: 'E-mail',
           contato: 'priscillasantana@outlook.com'
         }
       ],
       educacao: [
         {
           id: 1,
-          instituicao: 'UFPel',
+          instituicao: 'Universidade Federal de Pelotas',
           curso: 'Relações Internacionais - Concluída'
         },
         {
@@ -49,7 +49,7 @@ function App() {
         },
         {
           id: 2,
-          cargo: '',
+          cargo: 'Introdução ao Desenvolvimento Front End',
           periodo: '2020',
           empresa: 'Digital Innovation One',
           local: '',
@@ -58,18 +58,52 @@ function App() {
       ]
   };
   
+  const [resposta] = useState(fakeAPI);
 
   return (
     <main>
-        
+       
     <Foto />
-    <Header />
     <Perfil />
-    <Sidebar />
-    <Experiencia />
+    <Sidebar resposta={resposta} />
+    <Experiencia resposta={resposta} />
+    <Header resposta={resposta} />
 
     </main>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+/*<p>
+          -Lógica de Programação essencial, <br></br>
+          -Programação para internet com JavaScript, <br></br>
+          -Programação para internet com HTML5 e CSS3, <br></br>
+          -Construindo páginas para internet com Bootstrap. <br></br>
+          </p>
+          
+          
+          
+          
+          
+          <li>
+              <div className="item-contato">
+                <h4>E-MAIL</h4>
+                <p>priscillasantana@outlook.com</p>
+              </div>
+            </li>
+          
+          
+          
+          
+          
+          */

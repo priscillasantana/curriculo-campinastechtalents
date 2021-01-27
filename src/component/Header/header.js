@@ -2,9 +2,9 @@ import React from 'react';
 
 
 
-function Header() {
+function Header(props) {
 
-    //const { nome, ocupacao } = props.perfil;
+    const { nome, ocupacao } = props.resposta;
 
     return(
         <>
@@ -12,13 +12,13 @@ function Header() {
 
                 <h1>
 
-                Priscilla Santana do Espirito Santo
+                {nome}
 
                 </h1>
                 
                 <div className="ocupacao">
 
-                Front End Developer Student | React.js | Javascript  
+                {ocupacao}  
 
                 </div>
             

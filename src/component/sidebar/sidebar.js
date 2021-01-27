@@ -1,41 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Sidebar () {
+function Sidebar (props) {
+
+  const { contatos } = props.resposta
+  const { educacao } = props.resposta
+  const [dados, mostraDados] = useState(false)
+  const botao = () => {
+      mostraDados(!dados)
+  };
+console.log(contatos)
     return(
         <aside>
         <div className="sidebar">
           <h3>Contatos</h3>
 
-          <button id="button">Exibir Contatos</button>
+          <button id="button" onClick={botao}>Exibir Contatos</button>
 
-          <div className="lista-de-contatos">
-            <li>
-              <div className="item-contato">
-                <h4>TELEFONE</h4>
-                <p>(21) 99022-2459</p>
-              </div>
-            </li>
-            <li>
-              <div className="item-contato">
-                <h4>E-MAIL</h4>
-                <p>priscillasantana@outlook.com</p>
-              </div>
-            </li>
-          </div>
+          {dados && 
+              {contatos,map (item => (
+                <div className="lista-de-contatos" key={item.id}>
+                  <li>
+                    <div className="item-contato">
+                      <h4>{item.tipo}</h4>
+                      <p>{item.contato}</p>
+                    </div>
+                  </li>
+                </div>
+                ))}
+            }
         </div>
 
         <div className="sidebar">
           <h3>Educação</h3>
-          <div className="lista-de-formacao">
+         {educacao.map (item => (
+          <div className="lista-de-formacao"key={item.id}>
             <li>
-              <h4>Universidade Federal de Pelotas</h4>
-              <p>Relações Internacionais</p>
-            </li>
-            <li>
-              <h4>Campinas Tech Talents - AB Inbev</h4>
-              <p>Front End Jr Developer - React.js</p>
+              <h4>{item.instituicao}</h4>
+              <p>{item.curso}</p>
             </li>
           </div>
+         ))}
         </div>
       </aside>
     )
