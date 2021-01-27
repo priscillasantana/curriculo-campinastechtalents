@@ -17,7 +17,7 @@ console.log(contatos)
           <button id="button" onClick={botao}>Exibir Contatos</button>
 
           {dados && 
-              {contatos,map (item => (
+              contatos.map (item => (
                 <div className="lista-de-contatos" key={item.id}>
                   <li>
                     <div className="item-contato">
@@ -26,7 +26,7 @@ console.log(contatos)
                     </div>
                   </li>
                 </div>
-                ))}
+                ))
             }
         </div>
 

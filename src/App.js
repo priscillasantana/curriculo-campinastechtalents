@@ -53,8 +53,7 @@ function App() {
           periodo: '2020',
           empresa: 'Digital Innovation One',
           local: '',
-          conteudo: '-Lógica de Programação essencial, Programação para internet com JavaScript, Programação para internet com HTML5 e CSS3, Construindo páginas para internet com Bootstrap'
-        }
+          conteudo: 'Lógica de Programação essencial, programação para internet com JavaScript, programação para internet com HTML5 e CSS3, construindo páginas para internet com Bootstrap. '  }
       ]
   };
   
